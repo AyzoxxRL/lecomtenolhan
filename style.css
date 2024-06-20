@@ -470,6 +470,8 @@ nav ul li a:hover {
     right: 20px;
     outline: 1px solid var(--clr-shadow__border);
     z-index: 1000;
+    width: 270px;
+    height: 100px;
   }
   
   .button {
@@ -521,5 +523,14 @@ nav ul li a:hover {
   
     100% {
       transform: rotate(-30deg) translateY(calc(52% * var(--i)));
+    }
+  }
+
+  .mediaColor {
+    color: #1f1f1f;
+  }
+  @media screen and (max-width: 1080px) {
+    .box {
+      display: none;
     }
   }
