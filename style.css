@@ -1,0 +1,313 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to right, #1a2a6c, #490299, #01023f);
+    color: white;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    top: 0;
+    width: 100%; /* Reduce the width of the header */
+    margin: 0px 0px -28px 0px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px 0; /* Reduce padding to decrease distance between top and "Mon CV" */
+    position: static;
+    z-index: 2;
+    border-radius: 0px 0px 15px 15px;
+}
+
+header .container {
+    padding: 0; /* Remove padding from the container */
+    margin: auto;
+}
+
+header h1 {
+    margin: 10px 0; /* Reduce margin to decrease distance between "Mon CV" and the header */
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    position: static;
+    z-index: 2;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0px 10px 20px 10px; /* Add margin for better spacing */
+    background: rgba(0, 0, 0, 0);
+    padding: 20px; /* Increase padding for better spacing */
+    border-radius: 15px; /* Increase border-radius for a more modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    z-index: 1;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.main {
+    padding-top: 80px; /* Adjust padding to match the header height */
+    padding-bottom: 60px; /* Adjust padding to match the footer height */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.section {
+    margin: 40px 0; /* Increase margin for better spacing */
+    animation: fadeInUp 1s ease-in-out;
+    border-radius: 10px; /* Rounded corners for sections */
+    padding: 30px; /* Increase padding for better spacing */
+    background: rgba(0, 0, 0, 0.5); /* Add background to sections for better visibility */
+}
+
+.section h2 {
+    color: white; /* Change the color of section titles to white */
+    font-size: 2.5em; /* Increase font size for section titles */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+.section p, .section ul {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: white;
+}
+
+.section ul {
+    list-style-type: none; /* Remove default list style */
+    padding-left: 0; /* Remove default padding */
+}
+
+.section ul li {
+    position: relative;
+    padding-left: 30px; /* Add padding to make space for custom icon */
+    margin-bottom: 10px; /* Add margin for spacing between items */
+}
+
+.section ul li::before {
+    content: '\2713'; /* Custom checkmark symbol */
+    position: absolute;
+    left: 0;
+    color: #ffcc00; /* Custom icon color */
+    font-size: 1.5em; /* Custom icon size */
+    line-height: 1; /* Align icon with text */
+}
+
+#space {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #1a2a6c, #490299, #01023f);
+}
+
+#space::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(85, 4, 214, 0.849), rgb(123, 0, 139));
+    animation: rotateGalaxy 100s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes rotateGalaxy {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.stars {
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkling 2s infinite ease-in-out, moveStars 50s linear infinite;
+}
+
+@keyframes twinkling {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 1; }
+}
+
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#space .stars:nth-child(odd) {
+    animation-duration: 60.5s;
+}
+
+#space .stars:nth-child(even) {
+    animation-duration: 10.5s;
+}
+
+/* Additional styles for galaxy effect */
+.nebula {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 0, 149, 0.664), rgb(95, 1, 107));
+    border-radius: 50%; /* Make the nebula circular */
+    animation: moveNebula 60s linear infinite;
+    transform-origin: center;
+    opacity: 0.5; /* Make it semi-transparent */
+}
+
+@keyframes moveNebula {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100vw); }
+}
+
+#space::after {
+    content: '';
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    background: radial-gradient(circle at 50% 50%, rgba(78, 0, 129, 0.993), rgb(40, 3, 207));
+    border-radius: 50%; /* Make the nebula circular */
+    animation: rotateNebula 120s linear infinite;
+    transform-origin: center;
+    opacity: 0.3; /* Make it more transparent */
+}
+
+@keyframes rotateNebula {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+/* Effet parallax */
+#space {
+    background: url('https://giphy.com/embed/3og0IyRiAsl1Pczi6Y') no-repeat center center fixed;
+    background-size: cover;
+    /* <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/3og0IyRiAsl1Pczi6Y" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/space-stars-universe-3og0IyRiAsl1Pczi6Y">via GIPHY</a></p> */
+}
+
+/* Styles pour les étoiles filantes */
+.shooting-star {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom, white, transparent);
+    animation: shoot 1s linear infinite;
+}
+
+@keyframes shoot {
+    0% { transform: translateY(0) translateX(0); opacity: 1; }
+    100% { transform: translateY(100vh) translateX(100vw); opacity: 0; }
+
+}
+.profile {
+    border-radius: 50%;
+}
+@media print {
+    /* Masquer les éléments non nécessaires à l'impression */
+    header, footer, nav, .nebula, .shooting-star, .stars {
+        display: none;
+    }
+
+    /* Ajuster la mise en page pour l'impression */
+    body {
+        background: white;
+        color: black;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        height: auto;
+        overflow: visible;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    .section {
+        margin: 0;
+        padding: 0;
+        background: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .section h2 {
+        color: black;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .section p, .section ul {
+        font-size: 1em;
+        line-height: 1.4;
+        color: black;
+    }
+
+    .section ul li::before {
+        content: '\2022'; /* Utiliser un point au lieu d'un checkmark */
+        color: black;
+        font-size: 1em;
+    }
+
+    /* Supprimer les animations pour l'impression */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+.progress-bar-purple {
+    background-color: rgb(94, 2, 94) !important;
+}
+.progress-bar-orange {
+    background-color: orange !important;
+}
+.progress-bar-blue {
+    background-color: #1a2a6c !important;
+}
